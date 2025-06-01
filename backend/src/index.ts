@@ -5,7 +5,7 @@ import type { Snippet } from "@snippets/shared"
 const app = new Hono()
 
 app.get('/', (c) => {
-  const snippet: Snippet = { code: 'console.log("Hello World")', summary: "Hello world snippet" };
+  const snippet: Snippet = { id: '1', text: 'console.log("Hello World")', summary: "Hello world snippet" };
 
   return c.json(snippet);
 })

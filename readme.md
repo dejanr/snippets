@@ -31,3 +31,15 @@ Install the dependencies:
 ```bash
 pnpm i
 ```
+
+### Start
+
+To run snippets locally we have few dependencies that are managed by devenv, like mongodb etc.
+
+We treat those dependencies as attached resources following the 12 factor app guidance.
+
+Start all services:
+
+```bash
+devenv up
+```

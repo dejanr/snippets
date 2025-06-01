@@ -3,13 +3,18 @@
 {
   env.NIXPKGS_ALLOW_UNFREE = 1;
 
-  packages = [ ];
+  packages = [ pkgs.mongosh ];
 
   languages.javascript.enable = true;
   languages.javascript.pnpm.enable = true;
   languages.typescript.enable = true;
 
   services.mongodb.enable = true;
+  services.mongodb.additionalArgs = [
+    "--port"
+    "27017"
+    "--noauth"
+  ];
 
   enterShell = ''
   '';
