@@ -21,3 +21,13 @@ Or depending on your setup you might install devenv globally with home-manager o
 ### Direnv (Optional)
 
 Additionally direnv is recommended for automatic shell activation.
+
+## Getting Started
+
+### Installation
+
+Install the dependencies:
+
+```bash
+pnpm i
+```
