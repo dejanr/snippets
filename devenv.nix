@@ -20,5 +20,7 @@
   '';
 
   enterTest = ''
+    vitest --run backend
+    vitest -c frontend/vitest.config.ts --run
   '';
 }
