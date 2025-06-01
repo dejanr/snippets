@@ -1,6 +1,6 @@
 import { SnippetForm } from "../../components/SnippetForm";
 
-export function Home() {
+export function HomePage() {
   return (
     <div className="container mx-auto p-4 max-w-4xl">
       <main>
