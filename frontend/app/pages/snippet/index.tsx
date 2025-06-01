@@ -8,9 +8,13 @@ interface Props {
 export const SnippetPage: FC<Props> = ({ snippet }: Props) => {
   return (<div className="container mx-auto p-4 max-w-4xl">
     <div className="space-y-4">
-      <h1 className="text-3xl font-bold text-gray-800">Snippet</h1>
-      <span>{snippet.text}</span>
-      <span>{snippet.summary}</span>
+      <pre className="bg-gray-800 text-gray-100">
+        <code className="whitespace-pre-wrap font-mono text-sm">
+          {snippet.text}
+        </code>
+      </pre>
+      <blockquote>{snippet.summary}</blockquote>
     </div>
-  </div >);
-};
+  </div>
+  );
+}

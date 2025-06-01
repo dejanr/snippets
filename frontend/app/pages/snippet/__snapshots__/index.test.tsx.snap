@@ -7,17 +7,18 @@ exports[`it renders 1`] = `
   <div
     class="space-y-4"
   >
-    <h1
-      class="text-3xl font-bold text-gray-800"
+    <pre
+      class="bg-gray-800 text-gray-100"
     >
-      Snippet
-    </h1>
-    <span>
-      text
-    </span>
-    <span>
+      <code
+        class="whitespace-pre-wrap font-mono text-sm"
+      >
+        text
+      </code>
+    </pre>
+    <blockquote>
       summary
-    </span>
+    </blockquote>
   </div>
 </div>
 `;

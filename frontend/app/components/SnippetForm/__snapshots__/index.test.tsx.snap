@@ -3,6 +3,7 @@
 exports[`it renders 1`] = `
 <form
   class="mx-full mb-4"
+  method="post"
 >
   <div
     class="mb-4"

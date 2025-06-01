@@ -1,10 +1,12 @@
-export function SnippetForm() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-  };
+import { Form } from "react-router";
 
+interface SnippetFormProps {
+  onSubmit?: (event: React.FormEvent<HTMLFormElement>) => void;
+}
+
+export function SnippetForm({ onSubmit }: SnippetFormProps) {
   return (
-    <form onSubmit={handleSubmit} className="mx-full mb-4">
+    <Form onSubmit={onSubmit} method="post" className="mx-full mb-4">
       <div className="mb-4">
         <textarea
           id="text"
@@ -24,6 +26,6 @@ export function SnippetForm() {
           Create Snippet
         </span>
       </button>
-    </form>
+    </Form>
   );
 }

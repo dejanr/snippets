@@ -10,6 +10,7 @@ exports[`it renders 1`] = `
     >
       <form
         class="mx-full mb-4"
+        method="post"
       >
         <div
           class="mb-4"
@@ -34,15 +35,6 @@ exports[`it renders 1`] = `
           </span>
         </button>
       </form>
-    </div>
-    <div
-      class="space-y-4"
-    >
-      <h1
-        class="text-3xl font-bold text-gray-800"
-      >
-        Snippets
-      </h1>
     </div>
   </main>
 </div>
