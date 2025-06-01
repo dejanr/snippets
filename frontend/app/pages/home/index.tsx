@@ -1,12 +1,14 @@
+import { SnippetForm } from "../../components/SnippetForm";
+
 export function Home() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <main className="bg-white rounded-lg shadow-md p-6 my-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-6">Snippets</h1>
+    <div className="container mx-auto p-4 max-w-4xl">
+      <main>
         <div className="space-y-4">
-          <p className="text-gray-600">
-            Welcome to code snippets.
-          </p>
+          <SnippetForm />
+        </div>
+        <div className="space-y-4">
+          <h1 className="text-3xl font-bold text-gray-800">Snippets</h1>
         </div>
       </main>
     </div>
