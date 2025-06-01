@@ -1,14 +1,10 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
-import type { Snippet } from "@snippets/shared"
+import snippets from './snippets'
 
 const app = new Hono()
 
-app.get('/', (c) => {
-  const snippet: Snippet = { id: '1', text: 'console.log("Hello World")', summary: "Hello world snippet" };
-
-  return c.json(snippet);
-})
+app.route('/snippets', snippets)
 
 serve({
   fetch: app.fetch,
