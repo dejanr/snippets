@@ -48,3 +48,24 @@ This will start:
 - Frontend development server (automatically runs `pnpm run dev` in frontend folder)
 
 The processes will run concurrently, and you can see their logs in the terminal.
+
+### Docker Images
+
+Build Docker images for production deployment:
+
+```bash
+# Build backend image
+devenv build outputs.backend-image
+docker load < $(devenv build outputs.backend-image)
+
+# Build frontend image  
+devenv build outputs.frontend-image
+docker load < $(devenv build outputs.frontend-image)
+```
+
+This creates optimized Docker images using Nix that include Node.js, pnpm, and the application code.
+
+
+## Todo & Reflections
+
+- Improve docker images build, not all files are added and docker images are not configured properly

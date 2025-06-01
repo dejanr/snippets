@@ -3,6 +3,32 @@
 {
   env.MONGODB_URI = "mongodb://127.0.0.1:27017/snippets";
 
+  outputs = {
+    backend-image = pkgs.dockerTools.buildLayeredImage {
+      name = "snippets-backend";
+      tag = "latest";
+      contents = [ pkgs.nodejs_20 pkgs.pnpm ];
+      config = {
+        Cmd = [ "pnpm" "start" ];
+        WorkingDir = "/app";
+        ExposedPorts."3000/tcp" = {};
+        Env = [ "NODE_ENV=production" ];
+      };
+    };
+
+    frontend-image = pkgs.dockerTools.buildLayeredImage {
+      name = "snippets-frontend";
+      tag = "latest";
+      contents = [ pkgs.nodejs_20 pkgs.pnpm ];
+      config = {
+        Cmd = [ "pnpm" "start" ];
+        WorkingDir = "/app";
+        ExposedPorts."3000/tcp" = {};
+        Env = [ "NODE_ENV=production" ];
+      };
+    };
+  };
+
   packages = [ pkgs.mongosh ];
 
   languages.javascript.enable = true;
