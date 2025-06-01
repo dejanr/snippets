@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home component snapshot 1`] = `
+<div
+  class="container mx-auto px-4 py-8 max-w-4xl"
+>
+  <main
+    class="bg-white rounded-lg shadow-md p-6 my-8"
+  >
+    <h1
+      class="text-3xl font-bold text-gray-800 mb-6"
+    >
+      Snippets
+    </h1>
+    <div
+      class="space-y-4"
+    >
+      <p
+        class="text-gray-600"
+      >
+        Welcome to code snippets.
+      </p>
+    </div>
+  </main>
+</div>
+`;
