@@ -1,5 +1,5 @@
 import { vi, beforeEach, expect, test } from 'vitest'
-import snippets from './index'
+import { snippets } from './index'
 import { createSummary } from './utils/createSummary'
 
 vi.mock('./utils/createSummary', () => ({

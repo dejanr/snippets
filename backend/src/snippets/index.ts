@@ -1,8 +1,8 @@
 import { Hono } from 'hono'
 import { createHandler } from './create'
+import { getHandler } from './get'
 
-const snippets = new Hono()
+export const snippets = new Hono()
 
 snippets.post('/', createHandler)
-
-export default snippets
+snippets.get('/:id', getHandler)
