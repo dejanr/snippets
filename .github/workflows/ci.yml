@@ -1,0 +1,38 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v26
+      - uses: cachix/cachix-action@v14
+        with:
+          name: devenv
+      - name: Install devenv.sh
+        run: nix profile install nixpkgs#devenv
+      - name: Install dependencies
+        run: devenv shell pnpm install
+      - name: Run tests
+        run: devenv test
+      - name: Build Docker images
+        run: |
+          BACKEND_IMAGE=$(devenv build outputs.backend-image)
+          FRONTEND_IMAGE=$(devenv build outputs.frontend-image)
+          echo "BACKEND_IMAGE_PATH=$BACKEND_IMAGE" >> $GITHUB_ENV
+          echo "FRONTEND_IMAGE_PATH=$FRONTEND_IMAGE" >> $GITHUB_ENV
+
+      - name: Upload Docker images as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-images
+          path: |
+            ${{ env.BACKEND_IMAGE_PATH }}
+            ${{ env.FRONTEND_IMAGE_PATH }}
+          retention-days: 30
