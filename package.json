@@ -1,0 +1,17 @@
+{
+  "name": "snippets",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:update": "vitest -u"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "vitest": "^3.1.4"
+  }
+}
