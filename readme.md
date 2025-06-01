@@ -69,3 +69,7 @@ This creates optimized Docker images using Nix that include Node.js, pnpm, and t
 ## Todo & Reflections
 
 - Improve docker images build, not all files are added and docker images are not configured properly
+- More client side validation and handling of edge cases is needed, i would use zod for validating rest apis form data, but also on client side
+- By having shared pnpm workspace, i managed to share TS types between backend and frontend
+- I havent used docker and docker compose, but nix and devenv is more then capable in doing the same even better setup
+- In future i would probably create more presentational components needed for layout and split those following atomic design principles into atoms, molecules, organisms
