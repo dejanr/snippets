@@ -1,7 +1,7 @@
 { pkgs, lib, config, inputs, ... }:
 
 {
-  env.NIXPKGS_ALLOW_UNFREE = 1;
+  env.MONGODB_URI = "mongodb://127.0.0.1:27017/snippets";
 
   packages = [ pkgs.mongosh ];
 

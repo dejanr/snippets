@@ -8,9 +8,10 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@snippets/shared": "workspace:*",
     "@hono/node-server": "^1.14.3",
-    "hono": "^4.7.11"
+    "@snippets/shared": "workspace:*",
+    "hono": "^4.7.11",
+    "mongoose": "^8.15.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
