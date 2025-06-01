@@ -32,14 +32,19 @@ Install the dependencies:
 pnpm i
 ```
 
-### Start
+### Local Development
 
-To run snippets locally we have few dependencies that are managed by devenv, like mongodb etc.
+To run snippets locally we have few dependencies that are managed by devenv like mongodb, backend and frontend.
 
-We treat those dependencies as attached resources following the 12 factor app guidance.
-
-Start all services:
+Start all services including backend and frontend:
 
 ```bash
 devenv up
 ```
+
+This will start:
+- MongoDB service on port 27017
+- Backend API server (automatically runs `pnpm run dev` in backend folder)
+- Frontend development server (automatically runs `pnpm run dev` in frontend folder)
+
+The processes will run concurrently, and you can see their logs in the terminal.

@@ -16,6 +16,11 @@
     "--noauth"
   ];
 
+  processes = {
+    backend.exec = "cd backend && pnpm run dev";
+    frontend.exec = "cd frontend && pnpm run dev";
+  };
+
   enterShell = ''
   '';
 
